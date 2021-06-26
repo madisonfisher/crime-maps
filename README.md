@@ -4,9 +4,6 @@
 Philadelphia, PA:
 https://www.kaggle.com/mchirico/philadelphiacrimedata
 </br>
-DC:
-https://www.kaggle.com/vinchinzu/dc-metro-crime-data
-</br>
 Los Angeles, CA:
 https://www.kaggle.com/cityofLA/crime-in-los-angeles
 </br>
