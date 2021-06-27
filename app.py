@@ -1,10 +1,11 @@
 from flask import Flask, render_template
 from bson.json_util import dumps
 from pymongo import MongoClient
+from os import environ
 
 app = Flask(__name__)
-
-db = MongoClient('mongodb+srv://user:pass@bootcamp-project-2.tg9sg.mongodb.net/bootcamp_project_2?retryWrites=true&w=majority').bootcamp_project_2.data
+connection = environ.get('MONGODB_URI', 'mongodb://localhost:27017/bootcamp_project_2')
+db = MongoClient(connection).bootcamp_project_2.data
 
 key = {
     'la': 'Los Angeles',
