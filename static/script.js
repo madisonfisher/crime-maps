@@ -10,7 +10,8 @@ function updateData() {
   year = document.getElementById("selYear").value;
   d3.json(`/${city}/${year}`)
     .then((data) => console.log(data))
-    .then(() => {
+    .catch((error) => console.log(error))
+    .finally(() => {
       document.getElementById("button").disabled = false;
       document.getElementById("button").textContent = "Update";
     });
