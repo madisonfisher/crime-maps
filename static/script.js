@@ -6,8 +6,8 @@ function init() {
 function updateData() {
   document.getElementById("button").disabled = true;
   document.getElementById("button").textContent = "Loading data...";
-  city = document.getElementById("selCity").value;
-  year = document.getElementById("selYear").value;
+  city = document.getElementById("selectCity").value;
+  year = document.getElementById("selectYear").value;
   d3.json(`/${city}/${year}`)
     .then((data) => console.log(data))
     .catch((error) => console.log(error))
@@ -27,7 +27,7 @@ function populateDropdowns() {
   };
   const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016];
 
-  let select = document.getElementById("selCity");
+  let select = document.getElementById("selectCity");
   for (let i = 0; i < Object.keys(cityCodes).length; i++) {
     let element = document.createElement("option");
     element.textContent = cities[i];
@@ -35,7 +35,7 @@ function populateDropdowns() {
     select.appendChild(element);
   }
 
-  select = document.getElementById("selYear");
+  select = document.getElementById("selectYear");
   for (let i = 0; i < years.length; i++) {
     element = document.createElement("option");
     element.textContent = years[i];
