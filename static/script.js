@@ -4,9 +4,16 @@ function init() {
 }
 
 function updateData() {
+  document.getElementById("button").disabled = true;
+  document.getElementById("button").textContent = "Loading data...";
   city = document.getElementById("selCity").value;
   year = document.getElementById("selYear").value;
-  d3.json(`/${city}/${year}`).then((data) => console.log(data));
+  d3.json(`/${city}/${year}`)
+    .then((data) => console.log(data))
+    .then(() => {
+      document.getElementById("button").disabled = false;
+      document.getElementById("button").textContent = "Update";
+    });
 }
 
 function populateDropdowns() {
@@ -36,6 +43,5 @@ function populateDropdowns() {
   }
 }
 
-d3.selectAll("#selYear").on("change", updateData);
-d3.selectAll("#selCity").on("change", updateData);
+d3.selectAll("#button").on("click", updateData);
 init();
