@@ -5,45 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>US Metropolitan Crime</title>
+    <title>Methodology</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
         integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
         crossorigin="" />
-    <link rel="stylesheet" href="static/css/bootstrap_LUX.css">
+    <link rel="stylesheet" href="../static/css/bootstrap_LUX.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">US Metropolitan Crime</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
-                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/crime-maps/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/crime-maps/citycrime.html">Crime By City
-                            <span class="visually-hidden">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/crime-maps/methodology.html">Methodology
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/crime-maps/about.html">About Us
-                        </a>
-                    </li>
-                </ul>
-            </div>
+          <a class="navbar-brand" href="#">US Metropolitan Crime</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/crime-maps/templates/">Home
+                  
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Crime by City</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/crime-maps/templates/crime_rates.html">Crime Rates</a>
+                  <a class="dropdown-item" href="/crime-maps/templates/crime_rates.html">Types of Crime</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/crime-maps/templates/citycrime.html">Crime By City</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/crime-maps/templates/methodology.html">Methodology
+                  <span class="visually-hidden">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/crime-maps/templates/about.html">About Us</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-
-    <div id="main-map"></div>
+      </nav>
 
 
 
