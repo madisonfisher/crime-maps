@@ -5,7 +5,8 @@ from os import environ
 
 app = Flask(__name__)
 connection = environ.get('MONGODB_URI', 'mongodb://localhost:27017/bootcamp_project_2')
-db = MongoClient(connection).bootcamp_project_2.data
+collection = 'la'
+db = MongoClient(connection).bootcamp_project_2[collection]
 
 key = {
     'la': 'Los Angeles',
@@ -20,7 +21,8 @@ def index():
 
 @app.route('/<city>/<year>')
 def route(city, year):
-    query = dict(city=key[city], year=int(year))
+    #query = dict(city=key[city], year=int(year))
+    query=dict(year=int(year))
     return dumps(db.find(query))
 
 if __name__ == "__main__":
