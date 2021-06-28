@@ -6,8 +6,7 @@ function init() {
 function updateData() {
   document.getElementById("button").disabled = true;
   document.getElementById("button").textContent = "Loading data...";
-  //city = document.getElementById("selectCity").value;
-  city = "la";
+  city = document.getElementById("selectCity").value;
   year = document.getElementById("selectYear").value;
   d3.json(`/${city}/${year}`)
     .then((data) => console.log(data))
