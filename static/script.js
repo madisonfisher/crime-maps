@@ -20,8 +20,8 @@ function updateData() {
   d3.json(`/${city}/${year}`)
     .then((data) => {
       //plot stuff here
-      updateMap(data);
       console.log(data);
+      updateMap(data);
     })
     .catch((error) => console.log(error))
     .finally(() => {

@@ -15,7 +15,7 @@ def index():
 
 @app.route('/api_key')
 def api_key():
-    return {'key': api_key}
+    return api_key
 
 @app.route('/test')
 def test():
