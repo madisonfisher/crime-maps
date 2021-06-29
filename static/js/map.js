@@ -1,5 +1,10 @@
+const coordinates = {
+  atl: [33.7472, -84.3901],
+  buf: [42.8825, -78.8191],
+};
+
 function updateMap(data) {
-  let map = L.map("main-map").setView([33.76, -84.43], 10);
+  let map = L.map("main-map").setView(coordinates[city], 12);
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
     {
@@ -15,5 +20,7 @@ function updateMap(data) {
   // data.forEach((entry) => {
   //   L.marker([entry.lat, entry.long]).addTo(map);
   // });
-  L.marker([data[0].lat, data[0].long]).addTo(map).bindPopup(data[0].crime);
+  for (let i = 0; i < 10; i++) {
+    L.marker([data[i].lat, data[i].long]).addTo(map).bindPopup(data[i].crime);
+  }
 }
