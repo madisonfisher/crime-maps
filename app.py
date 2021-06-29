@@ -11,6 +11,22 @@ db = MongoClient(connection).split_db
 def index():    
     return render_template("index.html")
 
+@app.route("/about_us")
+def about():    
+    return render_template("about.html")
+
+@app.route("/methodology")
+def method():    
+    return render_template("methodology.html")
+
+@app.route("/crime_rates")
+def rates():    
+    return render_template("crime_rates.html")
+
+@app.route("/types_crime")
+def types():    
+    return render_template("crime_types.html")
+
 @app.route('/<city>/<year>')
 def route(city, year):
     collection = city+year
