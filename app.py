@@ -4,15 +4,8 @@ from pymongo import MongoClient
 from os import environ
 
 app = Flask(__name__)
-connection = environ.get('MONGODB_URI', 'mongodb://localhost:27017/bootcamp_project_2')
-db = MongoClient(connection).bootcamp_project_2.data
-
-key = {
-    'la': 'Los Angeles',
-    'atl': 'Atlanta',
-    'buf': 'Buffalo',
-    'phi': 'Philadelphia'
-}
+connection = environ.get('MONGODB_URI', 'mongodb://localhost:27017/split_db')
+db = MongoClient(connection).split_db
 
 @app.route("/")
 def index():    
@@ -20,8 +13,8 @@ def index():
 
 @app.route('/<city>/<year>')
 def route(city, year):
-    query = dict(city=key[city], year=int(year))
-    return dumps(db.find(query))
+    collection = 'buf'+f'{year}'
+    return dumps(db[collection].find())
 
 if __name__ == "__main__":
     app.run(debug=True,threaded=True)
