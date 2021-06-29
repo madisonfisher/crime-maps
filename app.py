@@ -4,7 +4,7 @@ from pymongo import MongoClient
 from os import environ
 
 app = Flask(__name__)
-connection = environ.get('mongodb+srv://user:pass@cluster0.tg9sg.mongodb.net/split_db?retryWrites=true&w=majority')
+connection = 'mongodb+srv://user:pass@cluster0.tg9sg.mongodb.net/split_db?retryWrites=true&w=majority'
 db = MongoClient(connection).split_db
 
 @app.route("/")
