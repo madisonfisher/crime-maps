@@ -1,11 +1,19 @@
 function init() {
   fetch("/test")
     .then((response) => response.text())
-    .then((data) => console.log(data));
+    .then((data) => {
+      console.log(data);
+      const testString = data;
+      console.log(testString);
+    });
 
   fetch("/api_key")
     .then((response) => response.text())
-    .then((data) => console.log(data));
+    .then((data) => {
+      console.log(data);
+      const API_KEY = data;
+      console.log(API_KEY);
+    });
 
   populateDropdowns();
   setTimeout(updateData, 100);
