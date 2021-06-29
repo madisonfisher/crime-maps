@@ -1,5 +1,11 @@
 function init() {
-  getAPIKey();
+  fetch("/key")
+    .then((response) => response.text())
+    .then((data) => {
+      const API_KEY = data;
+      console.log(API_KEY);
+    });
+
   populateDropdowns();
   updateData();
   d3.selectAll("#button").on("click", updateData);
@@ -48,14 +54,5 @@ function populateDropdowns() {
     select.appendChild(element);
   }
 }
-function getAPIKey() {
-  fetch("/key")
-    .then((response) => response.text())
-    .then((data) => {
-      return data;
-    });
-}
 
-const API_KEY = getAPIKey();
-console.log(API_KEY);
 init();
