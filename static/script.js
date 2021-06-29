@@ -12,7 +12,7 @@ function updateData() {
   year = document.getElementById("selectYear").value;
   d3.json(`/${city}/${year}`)
     .then((data) => {
-      //plot stuff here
+      // plot stuff here
       console.log(data);
       updateMap(data);
     })
