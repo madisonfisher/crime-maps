@@ -43,6 +43,9 @@ function populateDropdowns() {
   }
 }
 
+fetch("/api_key").then((data) => {
+  API_KEY = data;
+});
 d3.selectAll("#button").on("click", updateData);
 populateDropdowns();
 setTimeout(updateData, 100);
