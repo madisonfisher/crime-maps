@@ -7,6 +7,7 @@ app = Flask(__name__)
 connection = 'mongodb+srv://user:pass@cluster0.tg9sg.mongodb.net/split_db?retryWrites=true&w=majority'
 db = MongoClient(connection).split_db
 api_key = environ.get('API_KEY')
+test_string = environ.get('test_string')
 
 @app.route("/")
 def index():    
@@ -18,9 +19,7 @@ def api_key():
 
 @app.route('/test')
 def test():
-    s = 'a string'
-    message = {'key': s}
-    return message
+    return test_string
 
 @app.route("/about_us")
 def about():    

@@ -1,3 +1,17 @@
+function init() {
+  fetch("/test")
+    .then((response) => response.text())
+    .then((data) => console.log(data));
+
+  fetch("/api_key")
+    .then((response) => response.text())
+    .then((data) => console.log(data));
+
+  populateDropdowns();
+  setTimeout(updateData, 100);
+  d3.selectAll("#button").on("click", updateData);
+}
+
 function updateData() {
   document.getElementById("button").disabled = true;
   document.getElementById("button").textContent = "Loading data...";
@@ -24,8 +38,6 @@ function populateDropdowns() {
     Buffalo: "buf",
     Philadelphia: "phi",
   };
-  const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016];
-
   let select = document.getElementById("selectCity");
   for (let i = 0; i < Object.keys(cityCodes).length; i++) {
     let element = document.createElement("option");
@@ -34,6 +46,7 @@ function populateDropdowns() {
     select.appendChild(element);
   }
 
+  const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016];
   select = document.getElementById("selectYear");
   for (let i = 0; i < years.length; i++) {
     element = document.createElement("option");
@@ -43,14 +56,4 @@ function populateDropdowns() {
   }
 }
 
-fetch("/test")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-
-fetch("/api_key")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-
-populateDropdowns();
-setTimeout(updateData, 100);
-d3.selectAll("#button").on("click", updateData);
+init();
