@@ -50,11 +50,12 @@ function populateDropdowns() {
 }
 function getAPIKey() {
   fetch("/key")
-  .then((response) => response.text())
-  .then((data) => {
-    API_KEY = data;
-  });
+    .then((response) => response.text())
+    .then((data) => {
+      return data;
+    });
 }
 
-const API_KEY;
+const API_KEY = getAPIKey();
+console.log(API_KEY);
 init();
