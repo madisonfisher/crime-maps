@@ -6,9 +6,7 @@ from os import environ
 app = Flask(__name__)
 connection = 'mongodb+srv://user:pass@cluster0.tg9sg.mongodb.net/split_db?retryWrites=true&w=majority'
 db = MongoClient(connection).split_db
-
 API_KEY = environ.get('API_KEY')
-test_string = environ.get('test_string')
 
 @app.route("/")
 def index():    
@@ -17,10 +15,6 @@ def index():
 @app.route('/key')
 def api_key():
     return API_KEY
-
-@app.route('/test')
-def test():
-    return test_string
 
 @app.route("/about_us")
 def about():    

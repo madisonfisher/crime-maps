@@ -1,18 +1,5 @@
 function init() {
-  fetch("/test")
-    .then((response) => response.text())
-    .then((data) => {
-      const testString = data;
-      console.log(testString);
-    });
-
-  fetch("/key")
-    .then((response) => response.text())
-    .then((data) => {
-      const API_KEY = data;
-      console.log(API_KEY);
-    });
-
+  getAPIKey();
   populateDropdowns();
   updateData();
   d3.selectAll("#button").on("click", updateData);
@@ -61,5 +48,13 @@ function populateDropdowns() {
     select.appendChild(element);
   }
 }
+function getAPIKey() {
+  fetch("/key")
+  .then((response) => response.text())
+  .then((data) => {
+    API_KEY = data;
+  });
+}
 
+const API_KEY;
 init();
