@@ -14,7 +14,13 @@ def index():
 
 @app.route('/api_key')
 def api_key():
-    return api_key
+    return {'key': api_key}
+
+@app.route('/test')
+def test():
+    s = 'a string'
+    message = {'key': s}
+    return message
 
 @app.route("/about_us")
 def about():    

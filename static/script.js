@@ -43,10 +43,14 @@ function populateDropdowns() {
   }
 }
 
-d3.json("/api_key").then((data) => {
-  API_KEY = data;
-  console.log(API_KEY);
-});
+fetch("/test")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+fetch("/api_key")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
 populateDropdowns();
 setTimeout(updateData, 100);
 d3.selectAll("#button").on("click", updateData);
