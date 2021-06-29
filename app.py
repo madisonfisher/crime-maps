@@ -14,7 +14,7 @@ test_string = environ.get('test_string')
 def index():    
     return render_template("index.html")
 
-@app.route('/api_key')
+@app.route('/key')
 def api_key():
     return api_key
 

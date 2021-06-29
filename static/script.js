@@ -6,7 +6,7 @@ function init() {
       console.log(testString);
     });
 
-  fetch("/api_key")
+  fetch("/key")
     .then((response) => response.text())
     .then((data) => {
       const API_KEY = data;
