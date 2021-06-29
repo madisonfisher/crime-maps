@@ -3,8 +3,12 @@ const coordinates = {
   buf: [42.8825, -78.8191],
 };
 
+let map = L.map("main-map");
+let markers = L.layerGroup().addTo(map);
+
 function updateMap(data) {
-  let map = L.map("main-map").setView(coordinates[city], 12);
+  markers.clearLayers();
+  map.setView(coordinates[city], 12);
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
     {
@@ -17,10 +21,10 @@ function updateMap(data) {
       accessToken: API_KEY,
     }
   ).addTo(map);
-  // data.forEach((entry) => {
-  //   L.marker([entry.lat, entry.long]).addTo(map);
-  // });
+
   for (let i = 0; i < 10; i++) {
-    L.marker([data[i].lat, data[i].long]).addTo(map).bindPopup(data[i].crime);
+    L.marker([data[i].lat, data[i].long])
+      .addTo(markers)
+      .bindPopup(data[i].crime);
   }
 }
