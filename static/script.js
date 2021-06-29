@@ -45,6 +45,7 @@ function populateDropdowns() {
 
 fetch("/api_key").then((data) => {
   API_KEY = data;
+  console.log(API_KEY);
 });
 populateDropdowns();
 setTimeout(updateData, 100);
