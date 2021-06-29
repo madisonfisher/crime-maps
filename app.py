@@ -12,7 +12,7 @@ api_key = environ.get('API_KEY')
 def index():    
     return render_template("index.html")
 
-@app.route('api_key')
+@app.route('/api_key')
 def api_key():
     return api_key
 
