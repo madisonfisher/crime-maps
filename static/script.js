@@ -2,8 +2,7 @@ function init() {
   fetch("/key")
     .then((response) => response.text())
     .then((data) => {
-      const API_KEY = data;
-      console.log(API_KEY);
+      API_KEY = data;
     });
 
   populateDropdowns();
@@ -55,4 +54,6 @@ function populateDropdowns() {
   }
 }
 
+let API_KEY;
 init();
+console.log(API_KEY);
