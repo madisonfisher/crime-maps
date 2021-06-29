@@ -2,7 +2,6 @@ function init() {
   fetch("/test")
     .then((response) => response.text())
     .then((data) => {
-      console.log(data);
       const testString = data;
       console.log(testString);
     });
@@ -10,13 +9,12 @@ function init() {
   fetch("/api_key")
     .then((response) => response.text())
     .then((data) => {
-      console.log(data);
       const API_KEY = data;
       console.log(API_KEY);
     });
 
   populateDropdowns();
-  setTimeout(updateData, 100);
+  updateData();
   d3.selectAll("#button").on("click", updateData);
 }
 
