@@ -13,7 +13,7 @@ def index():
 
 @app.route('/<city>/<year>')
 def route(city, year):
-    collection = 'buf'+f'{year}'
+    collection = f'{city}+{year}'
     return dumps(db[collection].find())
 
 if __name__ == "__main__":
