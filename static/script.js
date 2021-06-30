@@ -10,9 +10,10 @@ function updateData() {
   document.getElementById("button").textContent = "Loading data...";
   city = document.getElementById("selectCity").value;
   year = document.getElementById("selectYear").value;
-  d3.json(`/${city}/${year}`)
+  fetch(`/${city}/${year}`)
+    .then((data) => data.json())
     .then((data) => {
-      //plot stuff here
+      // plot stuff here
       console.log(data);
       updateMap(data);
     })
@@ -32,7 +33,7 @@ function populateDropdowns() {
     Philadelphia: "phi",
   };
   let select = document.getElementById("selectCity");
-  for (let i = 0; i < Object.keys(cityCodes).length; i++) {
+  for (let i = 0; i < cities.length; i++) {
     let element = document.createElement("option");
     element.textContent = cities[i];
     element.value = cityCodes[element.textContent];
