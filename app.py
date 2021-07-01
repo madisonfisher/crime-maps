@@ -2,10 +2,11 @@ from flask import Flask, render_template
 from bson.json_util import dumps
 from pymongo import MongoClient
 from os import environ
+import ssl
 
 app = Flask(__name__)
 connection = 'mongodb+srv://user:pass@cluster0.tg9sg.mongodb.net/all_crime?retryWrites=true&w=majority'
-db = MongoClient(connection).all_crime
+db = MongoClient(connection, ssl_cert_reqs=ssl.CERT_NONE).all_crime
 
 @app.route("/")
 def index():    
