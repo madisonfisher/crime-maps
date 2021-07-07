@@ -1,10 +1,11 @@
+//<script src='/config.js'></script>
 const coordinates = {
   atl: [33.7472, -84.3901],
   buf: [42.8825, -78.8191],
 };
 
-let map = L.map("main-map");
-let markers = L.layerGroup().addTo(map);
+var map = L.map("main-map");
+var markers = L.markerClusterGroup();
 
 function updateMap(data) {
   markers.clearLayers();
@@ -22,9 +23,11 @@ function updateMap(data) {
     }
   ).addTo(map);
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < data.length; i++) {
     L.marker([data[i].lat, data[i].long])
       .addTo(markers)
       .bindPopup(data[i].crime);
   }
+  map.addLayer(markers);
 }
+
