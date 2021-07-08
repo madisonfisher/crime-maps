@@ -1,5 +1,6 @@
-from flask import Flask, render_template
-from bson.json_util import dumps
+from flask import Flask, render_template, jsonify
+from bson import json_util
+#import dumps
 from pymongo import MongoClient
 from os import environ
 import ssl
@@ -35,7 +36,8 @@ def api_key():
 @app.route('/<city>/<year>')
 def route(city, year):
     query = dict(year=int(year))
-    return dumps(db[city].find(query))
+    return json_util.dumps(db[city].find(query))
+  
 
 if __name__ == "__main__":
     app.run(debug=True,threaded=True)
