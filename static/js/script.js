@@ -1,5 +1,5 @@
 function init() {
-  //fetchAPIKey();
+  fetchAPIKey();
   populateDropdowns();
   updateData();
   d3.selectAll("#button").on("click", updateData);
