@@ -48,11 +48,42 @@
     </div>
   </nav>
 
-   
-
-
-
-
+  <div class="container">
+  </br>
+  <div class="row">
+    <div class="col-md-4 col-sm-12">
+      <div class="card bg-secondary mb-3" style="max-width: 20rem;">
+        <div class="card-header">City Data Selector</div>
+        <div class="card-body">
+          <select id="selectCity"></select>
+          <select id="selectYear"></select>
+          <select id="selectMonth"></select>
+          <fieldset class="form-group">
+            <legend class="mt-3"><h6>Neighborhoods</h6></legend>
+            <p id="checkbox"></p>
+            <!-- <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Default checkbox
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+              <label class="form-check-label" for="flexCheckChecked">
+                Checked checkbox
+              </label>
+            </div> -->
+          </fieldset>
+          </br>
+          <button id="button">Loading Data...</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 col-sm-12">
+      <div id="plot"></div>
+    </div>
+  </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -71,12 +102,11 @@
         crossorigin=""></script>
     <!--D3-->
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!--app code-->
+    <script src="../static/script_rates.js"></script>
+    
     <!--plotly-->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!--plot file-->
-    <script src="static/js/plot.js"></script>
-    <!--map plotting file-->
-    <script type="text/javascript" src="static/js/map.js"></script>
 
 </body>
 
