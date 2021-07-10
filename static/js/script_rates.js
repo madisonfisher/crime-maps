@@ -34,7 +34,7 @@ $(document).ready(function () {
 
 const alt_neighborhoods = ["Bankhead/Bolton", "Betmar LaVilla", "Boulevard Heights", "Brandon", "Brookwood", "Campbelton Road", "Capitol View Manor", "Castleberry Hill", "Center Hill", "Choosewood Park", "Downtown", "Edgewood", "Grant Park", "Inman Park", "Lakewood Heights", "Lenox", "Lindberg/Morosgo", "Lindridge/Martin Manor", "Mechanicsville", "Midtown", "Old Forth Ward", "Peachtree Battle Alliance", "The Villages at Castleberry H", "Thomasville Heights", "West End"];
 const buf_neighborhoods = ["Babcock", "Black Rock", "Broadway - Filmore", "Buffalo", "Columbus", "Downtown", "Elmwood Village", "Eric County", "Forest", "Front Park", "Genesee Moselle", "Grider", "Kaisertown", "Kensington", "Kingsley", "Lakeview", "LaSalle", "Masten Park", "Military", "North Park", "Parkside", "Schiller Park", "South Ellicott", "Willert Park", "Williamsville"]
-
+const colors = ['#000000', '#2f4f4f', '#8b4513', '#228b22', '#808000', '#483d8b', '#4682b4', '#000080', '#9acd32', '#8b008b', '#b03060', '#ff0000', '#ff8c00', '#ffd700', '#7cfc00', '#40e0d0', '#8a2be2', '#00ff7f', '#e9967a', '#dc143c', '#0000ff', '#ff00ff', '#1e90ff', '#f0e68c', '#dda0dd']
 function updateData() {
   document.getElementById("button").disabled = true;
   document.getElementById("button").textContent = "Loading data...";
@@ -93,7 +93,6 @@ function updateData() {
         var neighbor = buf_neighborhoods;
       }
       var neigh_data = [];
-      const colors = ['#e2169e', '#2d7764', '#6b03dc', '#e6194B', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#42d4f4', '#f032e6', '#bfef45', '#fabed4', '#469990', '#dcbeff', '#9A6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#a9a9a9', '#FFFF00', '#000000']
       for (let i = 0; i < neighbor.length; i++) {
         sel_checkbox = document.getElementById(neighbor[i]).value;
         if (sel_checkbox === "true") {
@@ -180,7 +179,7 @@ function populateDropdowns() {
 }
 
 function populateCheckboxs() {
-
+  
   let input1 = document.getElementById("checkbox");
   input1.innerHTML = "";
 
@@ -193,6 +192,7 @@ function populateCheckboxs() {
       element.setAttribute('checked', true);
       let neigh_name = document.createElement("label");
       neigh_name.setAttribute('for', alt_neighborhoods[i]);
+      neigh_name.setAttribute('style', `color: ${colors[i]}; font-weight:bold`);
       let name_text = document.createTextNode(alt_neighborhoods[i])
       let br = document.createElement("br");
       neigh_name.appendChild(name_text);
@@ -210,6 +210,7 @@ function populateCheckboxs() {
       element.setAttribute('checked', true);
       let neigh_name = document.createElement("label");
       neigh_name.setAttribute('for', buf_neighborhoods[i]);
+      neigh_name.setAttribute('style', `color: ${colors[i]}; font-weight:bold`);
       let name_text = document.createTextNode(buf_neighborhoods[i])
       let br = document.createElement("br");
       neigh_name.appendChild(name_text);
