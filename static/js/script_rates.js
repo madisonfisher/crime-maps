@@ -1,5 +1,5 @@
 function init() {
-  fetchAPIKey();
+  //fetchAPIKey();
   populateDropdowns();
   updateData();
   populateCheckboxs();
@@ -9,6 +9,16 @@ function init() {
 d3.select('#selectCity').on('change', function () {
   city = document.getElementById("selectCity").value;
   populateCheckboxs();
+
+  $(document).ready(function () {
+    $("input[type='checkbox']").click(function (e) {
+      if ($(this).is(':checked')) {
+        $(this).val("true");
+      } else {
+        $(this).val("false");
+      }
+    });
+  })
 })
 
 //handles changing the value of the checkbox
