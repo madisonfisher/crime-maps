@@ -25,12 +25,10 @@ function updateData() {
 }
 
 function populateDropdowns() {
-  const cities = ["Atlanta", "Los Angeles", "Buffalo", "Philadelphia"];
+  const cities = ["Atlanta", "Buffalo"];
   const cityCodes = {
     Atlanta: "atl",
-    "Los Angeles": "la",
     Buffalo: "buf",
-    Philadelphia: "phi",
   };
   let select = document.getElementById("selectCity");
   for (let i = 0; i < cities.length; i++) {
