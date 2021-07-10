@@ -1,5 +1,5 @@
 function init() {
-  //fetchAPIKey();
+  fetchAPIKey();
   populateDropdowns();
   updateData();
   populateCheckboxs();
