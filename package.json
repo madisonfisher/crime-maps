@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@splidejs/splide": "^2.4.21"
+  }
+}
